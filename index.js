@@ -511,12 +511,14 @@ export default class WebTorrent extends EventEmitter {
   }
 
   _onListening () {
+    console.log('WT listening')
     this._debug('listening')
     this.listening = true
 
     if (this._connPool) {
       // Sometimes server.address() returns `null` in Docker.
       const address = this._connPool.tcpServer.address()
+      console.log('WT listening ADDR', address)
       if (address) {
         this.torrentPort = address.port
         if (this.natTraversal) {

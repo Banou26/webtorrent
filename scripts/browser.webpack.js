@@ -1,5 +1,6 @@
 import webpack from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin'
 import info from '../package.json' assert { type: 'json' }
 
 /** @type {import('webpack').Configuration} */
@@ -31,7 +32,8 @@ export default {
     }),
     new webpack.DefinePlugin({
       global: 'globalThis'
-    })
+    }),
+    new NodePolyfillPlugin()
   ],
   optimization: {
     minimize: true,
