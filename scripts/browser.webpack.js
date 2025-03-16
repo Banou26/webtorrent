@@ -1,5 +1,6 @@
 import webpack from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin'
 import info from '../package.json' assert { type: 'json' }
 
 /** @type {import('webpack').Configuration} */
@@ -27,11 +28,13 @@ export default {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      process: '/polyfills/process-fast.js'
+      process: '/polyfills/process-fast.js',
+      Buffer: ['buffer', 'Buffer']
     }),
     new webpack.DefinePlugin({
       global: 'globalThis'
-    })
+    }),
+    new NodePolyfillPlugin()
   ],
   optimization: {
     minimize: true,
