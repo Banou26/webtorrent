@@ -1,5 +1,5 @@
 {
-  "name": "webtorrent",
+  "name": "@banou/webtorrent",
   "description": "Streaming torrent client",
   "version": "2.5.19",
   "author": {
@@ -171,7 +171,6 @@
     "build-chromeapp": "webpack --config ./scripts/chromeapp.webpack.js",
     "build-js": "webpack --config ./scripts/browser.webpack.js",
     "build-js-worker": "webpack --config ./scripts/worker.webpack.js",
-    "prepublishOnly": "npm run build && npm run update-authors",
     "preversion": "npm run build && npm run update-authors",
     "size": "npm run size-js && npm run size-disc",
     "size-disc": "npm run build-js && cat ./dist/webtorrent.min.js | discify --open",
@@ -179,8 +178,7 @@
     "test": "eslint . && npm run test-node && npm run test-browser",
     "test-browser": "airtap --concurrency 1 --all -- test/*.js test/browser/*.js | tap-spec",
     "test-browser-local": "airtap --preset local -- test/*.js test/browser/*.js | tap-spec",
-    "test-node": "tape test/*.js test/node/*.js | tap-spec",
-    "update-authors": "./scripts/update-authors.sh"
+    "test-node": "tape test/*.js test/node/*.js | tap-spec"
   },
   "renovate": {
     "extends": [
