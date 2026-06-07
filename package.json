@@ -38,12 +38,12 @@
     "os": false
   },
   "dependencies": {
-    "@fkn/lib": "^0.3.7",
+    "@fkn/lib": "file:../fkn/web/lib",
     "@silentbot1/nat-api": "^0.4.7",
     "@thaunknown/simple-peer": "^10.0.11",
     "@webtorrent/http-node": "^1.3.0",
-    "@webvpn/dgram": "^0.3.7",
-    "@webvpn/net": "^0.3.7",
+    "@webvpn/dgram": "file:../fkn/webvpn-dgram",
+    "@webvpn/net": "file:../fkn/webvpn-net",
     "addr-to-ip-port": "^2.0.0",
     "bitfield": "^4.2.0",
     "bittorrent-dht": "^11.0.9",
